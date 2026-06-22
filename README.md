@@ -1,5 +1,4 @@
 # home-care-site
-Home care website 
-[/src](./src)
+[Home care site](https://tbs-eng.github.io/home-care-site/src/)
 
 
