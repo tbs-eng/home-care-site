@@ -5,22 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="San Diego's RN-led senior home care and placement agency. Transparent pricing, free care assessment, serving all of San Diego County." />
 <title>Carevider — San Diego Senior Home Care & Placement | RN-Led, Transparent Pricing</title>
-<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="./styles/styles.css" />
 <style>
-  /* ---------- HOMEPAGE-ONLY STYLES ---------- */
-  /* Hero (homepage-specific gradient + layout) */
+
+  /* ---------- HOMEPAGE-ONLY STYLES (MOBILE-FIRST) ---------- */
+
+  /* Hero */
   .home-hero {
     background: linear-gradient(135deg, var(--blue-soft) 0%, #fff 60%, var(--orange-soft) 100%);
-    padding: 72px 0 80px;
+    padding: 48px 0 56px;
   }
   .home-hero .hero-grid {
-    display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;
+    display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center;
   }
   .home-hero h1 span { color: var(--orange); }
   .home-hero p.lead { font-size: 1.2rem; color: var(--ink); margin-bottom: 28px; max-width: 540px; }
   .home-hero .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
   .home-hero .trust-strip {
-    display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
+    display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
     padding-top: 24px; border-top: 1px solid var(--line);
     font-size: .95rem; color: var(--ink-soft);
   }
@@ -48,12 +50,10 @@
   }
   .quick-q button:hover { border-color: var(--orange); background: var(--orange-soft); }
 
-  /* Four-pillar 2x2 grid */
-  .pillars {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap);
-  }
+  /* Four-pillar grid */
+  .pillars { display: grid; grid-template-columns: 1fr; gap: var(--gap); }
   .pillar {
-    padding: 32px; border-radius: var(--radius);
+    padding: 28px; border-radius: var(--radius);
     border: 2px solid; background: #fff;
     transition: transform .15s, box-shadow .15s;
   }
@@ -66,38 +66,37 @@
   .pillar ul { padding-left: 20px; margin: 12px 0 16px; color: var(--ink-soft); }
   .pillar a.pillar-link { font-weight: 700; }
 
-  /* Assessment teaser band */
+  /* Assessment teaser */
   .assessment-teaser {
     background: var(--orange); color: #fff;
-    border-radius: 14px; padding: 40px;
-    display: grid; grid-template-columns: 2fr 1fr; align-items: center; gap: 32px;
+    border-radius: 14px; padding: 28px;
+    display: grid; grid-template-columns: 1fr; align-items: center; gap: 24px;
+    text-align: center;
   }
   .assessment-teaser h2 { color: #fff; margin-bottom: 8px; }
   .assessment-teaser p  { color: rgba(255,255,255,.95); margin: 0; font-size: 1.1rem; }
   .assessment-teaser .btn { background: #fff; color: var(--orange); }
   .assessment-teaser .btn:hover { background: var(--bg-alt); }
 
-  /* Pricing wrap + cards */
+  /* Pricing */
   .pricing-wrap { background: var(--blue-soft); }
-  .pricing-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px;
-  }
+  .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 32px; }
   .rate-card {
     background: #fff; border-radius: var(--radius); padding: 28px;
     border: 1px solid var(--line); text-align: center;
   }
   .rate-card.featured { border: 2px solid var(--blue); }
   .rate-card h4 { color: var(--blue); margin-bottom: 4px; }
-  .rate-card .price { font-size: 2.25rem; font-weight: 800; color: var(--ink); margin: 8px 0; }
+  .rate-card .price { font-size: 2rem; font-weight: 800; color: var(--ink); margin: 8px 0; }
   .rate-card .price small { font-size: 1rem; color: var(--ink-soft); font-weight: 400; }
   .rate-card .note { font-size: .9rem; color: var(--ink-soft); }
   .calc-card {
-    background: #fff; border-radius: var(--radius); padding: 28px;
+    background: #fff; border-radius: var(--radius); padding: 24px;
     border: 1px solid var(--line);
   }
   .calc-card h3 { color: var(--blue); }
   .calc-row { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-  .calc-row label { flex: 1; min-width: 180px; }
+  .calc-row label { flex: 1; min-width: 160px; }
   .calc-row label span { display: block; font-weight: 600; margin-bottom: 6px; font-size: .95rem; }
   .calc-row input, .calc-row select {
     width: 100%; min-height: 48px; padding: 10px 12px;
@@ -113,19 +112,20 @@
 
   /* Accreditation strip */
   .accred {
-    display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+    display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
     padding: 24px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
   }
   .accred .item { text-align: center; padding: 8px 16px; font-weight: 700; color: var(--blue); }
   .accred .item small { display: block; font-weight: 400; color: var(--ink-soft); font-size: .85rem; }
 
   /* RN block */
-  .rn-block { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center; }
+  .rn-block { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; }
   .rn-photo {
     background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
     border-radius: var(--radius); aspect-ratio: 1;
     display: flex; align-items: center; justify-content: center;
-    color: #fff; font-size: 4rem;
+    color: #fff; font-size: 3rem;
+    max-width: 280px; margin: 0 auto;          /* cap on small screens so it isn't huge */
   }
   .rn-block h2 { color: var(--blue); }
 
@@ -133,18 +133,14 @@
   .outcomes-wrap { background: var(--blue); color: #fff; }
   .outcomes-wrap h2 { color: #fff; text-align: center; }
   .outcomes-wrap .eyebrow { color: #FFD9B8; }
-  .outcomes {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 32px 0;
-  }
+  .outcomes { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 32px 0; }
   .outcome {
     text-align: center; padding: 24px;
     background: rgba(255,255,255,.08); border-radius: var(--radius);
   }
-  .outcome .stat { font-size: 3rem; font-weight: 800; color: var(--orange); line-height: 1; }
+  .outcome .stat { font-size: 2.5rem; font-weight: 800; color: var(--orange); line-height: 1; }
   .outcome .label { font-size: 1rem; margin-top: 8px; color: rgba(255,255,255,.92); }
-  .testimonials {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 16px;
-  }
+  .testimonials { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 16px; }
   .testimonial {
     background: rgba(255,255,255,.1); padding: 20px; border-radius: var(--radius);
     border-left: 4px solid var(--orange);
@@ -153,7 +149,7 @@
   .testimonial cite { font-style: normal; font-weight: 600; color: #FFD9B8; font-size: .9rem; }
 
   /* Service area */
-  .areas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+  .areas-grid { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
   .area-map {
     background: var(--bg-alt); border-radius: var(--radius); aspect-ratio: 4/3;
     display: flex; align-items: center; justify-content: center;
@@ -165,7 +161,7 @@
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     font-size: 1.1rem;
   }
-  .area-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .area-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 8px; }
   .area-list li a {
     display: flex; align-items: center; justify-content: space-between;
     padding: 12px 14px; background: #fff; border: 1px solid var(--line);
@@ -187,9 +183,9 @@
   }
 
   /* Bridges */
-  .bridges { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .bridges { display: grid; grid-template-columns: 1fr; gap: 24px; }
   .bridge {
-    padding: 32px; border-radius: var(--radius);
+    padding: 28px; border-radius: var(--radius);
     display: flex; flex-direction: column; gap: 12px;
   }
   .bridge.pro { background: var(--blue); color: #fff; }
@@ -200,19 +196,31 @@
   .bridge.es h3 { color: var(--orange-dark); }
   .bridge.es .btn { align-self: flex-start; }
 
-  /* Responsive overrides specific to homepage layouts */
-  @media (max-width: 960px) {
-    .home-hero .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-    .pillars { grid-template-columns: 1fr; }
-    .assessment-teaser { grid-template-columns: 1fr; text-align: center; padding: 28px; }
-    .pricing-grid { grid-template-columns: 1fr; }
-    .rn-block { grid-template-columns: 1fr; }
-    .outcomes { grid-template-columns: 1fr; }
-    .testimonials { grid-template-columns: 1fr; }
-    .areas-grid { grid-template-columns: 1fr; }
-    .bridges { grid-template-columns: 1fr; }
+  /* ---------- ENHANCE UP (mobile-first min-width) ---------- */
+  @media (min-width: 561px) {
+    .area-list { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 768px) {
+    .pillars { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    .outcomes { grid-template-columns: repeat(3, 1fr); }
+    .testimonials { grid-template-columns: repeat(2, 1fr); }
+    .bridges { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 961px) {
+    .home-hero { padding: 72px 0 80px; }
+    .home-hero .hero-grid { grid-template-columns: 1.2fr 1fr; gap: 48px; }
+    .assessment-teaser {
+      grid-template-columns: 2fr 1fr; text-align: left; padding: 40px;
+    }
+    .rn-block { grid-template-columns: 1fr 1.5fr; }
+    .rn-photo { max-width: none; margin: 0; font-size: 4rem; }
+    .areas-grid { grid-template-columns: 1fr 1fr; }
+    .rate-card .price { font-size: 2.25rem; }
+    .outcome .stat { font-size: 3rem; }
   }
 </style>
+
 </head>
 <body>
 
@@ -238,14 +246,15 @@
       <span class="logo-mark" aria-hidden="true"></span>
       <!-- Carevider -->
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="primary-nav">
       <li><a href="care-now/" class="pillar-orange">Get Care Now</a></li>
       <li><a href="pricing/" class="pillar-blue">Pricing</a></li>
       <li><a href="decide/" class="pillar-orange">Help Me Decide</a></li>
       <li><a href="trust/" class="pillar-blue">Why Trust Us</a></li>
     </ul>
     <a href="decide/assessment.html" class="btn btn-orange nav-cta">Free Care Assessment</a>
-    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+  <!-- <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button> -->
   </div>
 </nav>
 
@@ -723,6 +732,7 @@
 </div>
 
 <!-- Cost calculator + nav UX -->
+<!-- Homepage cost estimator (page-specific, stays inline) -->
 <script>
   (function () {
     const type   = document.getElementById('calc-type');
@@ -730,6 +740,7 @@
     const days   = document.getElementById('calc-days');
     const weekly = document.getElementById('calc-weekly');
     const monthly= document.getElementById('calc-monthly');
+    if (!type || !hours || !days || !weekly || !monthly) return;
 
     function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
     function update() {
@@ -743,13 +754,11 @@
     [type, hours, days].forEach(el => el && el.addEventListener('input', update));
     update();
   })();
-
-  document.addEventListener('click', function (e) {
-    if (e.target.matches('.nav-links a')) {
-      document.querySelector('.nav-links').classList.remove('open');
-    }
-  });
 </script>
+
+<!-- Shared nav behavior -->
+<script src="./scripts/nav.js" defer></script>
+
 
 </body>
 </html>
