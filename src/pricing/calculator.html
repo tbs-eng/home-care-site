@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Senior Home Care Cost Calculator | San Diego Estimate | Carevider</title>
+  <meta name="description" content="Free San Diego senior home care cost calculator. Enter hours, days, and care level for an instant weekly and monthly estimate — no contact information required." />
+  <link rel="canonical" href="https://www.carevider.com/pricing/calculator.html" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <style>
+    /* Page-specific (calculator): result emphasis + helper text. Mobile-first. */
+    .calc-result .est-label { font-weight: 600; color: var(--ink-soft); font-size: .95rem; }
+    .calc-result + .calc-result { margin-top: 12px; }
+    .calc-help { font-size: .9rem; color: var(--ink-soft); margin-top: 16px; }
+    .calc-disclaimer {
+      background: var(--orange-soft); border-left: 4px solid var(--orange);
+      border-radius: 8px; padding: 14px 16px; margin-top: 20px;
+      font-size: .92rem; color: var(--ink-soft);
+    }
+  </style>
+
+  <!-- JSON-LD: Organization + MedicalBusiness + WebApplication + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.carevider.com/#organization",
+        "name": "Carevider",
+        "legalName": "Evergreen Senior Care",
+        "url": "https://www.carevider.com/",
+        "telephone": "+1-858-555-0123",
+        "areaServed": { "@type": "AdministrativeArea", "name": "San Diego County, California" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://www.carevider.com/#medicalbusiness",
+        "name": "Carevider",
+        "url": "https://www.carevider.com/",
+        "telephone": "+1-858-555-0123",
+        "parentOrganization": { "@id": "https://www.carevider.com/#organization" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "San Diego County, California" }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://www.carevider.com/pricing/calculator.html#webapp",
+        "name": "Senior Home Care Cost Calculator",
+        "url": "https://www.carevider.com/pricing/calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Instant weekly and monthly cost estimate for San Diego senior home care based on hours per day, days per week, and care level.",
+        "isPartOf": { "@id": "https://www.carevider.com/#organization" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.carevider.com/pricing/calculator.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carevider.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Pricing & Payment", "item": "https://www.carevider.com/pricing/" },
+          { "@type": "ListItem", "position": 3, "name": "Cost Calculator", "item": "https://www.carevider.com/pricing/calculator.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- 1. UTILITY BAR -->
+  <div class="utility-bar">
+    <div class="container">
+      <div class="utility-left">
+        <span class="hide-sm">📞 Available 24/7</span>
+        <a href="tel:+18585550123" class="phone">(858) 555-0123</a>
+      </div>
+      <div class="utility-right">
+        <a href="/es/">Español</a>
+        <a href="/professional/">Professionals</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. STICKY NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo" aria-label="Carevider home">
+        <span class="logo-mark" aria-hidden="true"></span>
+      </a>
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="../care-now/" class="pillar-orange">Get Care Now</a></li>
+        <li><a href="../pricing/" class="pillar-blue active">Pricing</a></li>
+        <li><a href="../decide/" class="pillar-orange">Help Me Decide</a></li>
+        <li><a href="../trust/" class="pillar-blue">Why Trust Us</a></li>
+      </ul>
+      <a href="../decide/assessment.html" class="btn btn-orange nav-cta">Free Care Assessment</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+    </div>
+  </nav>
+
+  <!-- 3. BREADCRUMBS -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pricing/">Pricing &amp; Payment</a></li>
+        <li aria-current="page">Cost Calculator</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- 4. PAGE HERO (blue) -->
+  <header class="page-hero blue">
+    <div class="container">
+      <div>
+        <p class="eyebrow">Pricing &amp; Payment</p>
+        <h1>San Diego home care cost calculator</h1>
+        <p class="lead">Estimate your weekly and monthly cost in seconds. Set the hours, days, and care level — no name, email, or phone number required.</p>
+        <div class="hero-cta">
+          <a href="#calculator" class="btn btn-orange btn-lg">Start Estimating</a>
+          <a href="rates.html" class="btn btn-outline-blue">See Our Rates</a>
+        </div>
+      </div>
+      <aside class="page-hero-card blue">
+        <h2>What to expect</h2>
+        <ul class="checklist">
+          <li>Instant weekly &amp; monthly estimate</li>
+          <li>No contact information required</li>
+          <li>Adjust hours, days &amp; care level live</li>
+          <li>Free RN assessment confirms exact pricing</li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <!-- 5. CALCULATOR WIDGET -->
+  <section id="calculator" class="pricing-wrap">
+    <div class="container">
+      <p class="eyebrow">Estimate</p>
+      <h2>Build your estimate</h2>
+      <div class="calc-card">
+        <h3>Care details</h3>
+        <div class="calc-row">
+          <label for="calc-care-level">
+            <span>Care level</span>
+            <select id="calc-care-level">
+              <option value="companion">Companion care</option>
+              <option value="personal">Personal care</option>
+              <option value="specialized">Specialized / dementia care</option>      
+            </select>
+          </label>
+          <label for="calc-hours">
+            <span>Hours per day</span>
+            <input id="calc-hours" type="number" inputmode="numeric" min="1" max="24" step="1" value="6" />
+          </label>
+          <label for="calc-days">
+            <span>Days per week</span>
+            <input id="calc-days" type="number" inputmode="numeric" min="1" max="7" step="1" value="5" />
+          </label>
+        </div>
+
+        <div class="calc-result" aria-live="polite">
+          <span class="est-label">Estimated weekly cost</span>
+          <span class="est" id="calc-weekly">$0</span>
+        </div>
+        <div class="calc-result" aria-live="polite">
+          <span class="est-label">Estimated monthly cost</span>
+          <span class="est" id="calc-monthly">$0</span>
+        </div>
+
+        <p class="calc-help">Monthly figure uses an average of 4.33 weeks per month. Rates shown are placeholders pending confirmed San Diego pricing.</p>
+
+        <div class="calc-disclaimer">
+          This is an estimate for planning only and is not a quote. Your exact rate depends on care needs and schedule and is confirmed at your free RN assessment.
+        </div>
+      </div>
+
+      <div class="pricing-ctas">
+        <a href="../decide/assessment.html" class="btn btn-orange btn-lg">Book Free RN Assessment</a>
+        <a href="cost-index.html" class="btn btn-outline-blue">Compare to the 2026 Cost Index</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. HOW IT WORKS -->
+  <section>
+    <div class="container">
+      <h2>How the estimate works</h2>
+      <p>The calculator multiplies your hourly rate by hours per day and days per week to get a weekly cost, then multiplies by 4.33 to project a month. It's the same math our team uses on the phone — just instant and private.</p>
+      <div class="callout blue">
+        <strong>Weekly = rate × hours × days.</strong> Monthly = weekly × 4.33. Change any input and both numbers update immediately.
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. TWO-COLUMN -->
+  <section style="background:var(--bg-alt);">
+    <div class="container two-col">
+      <div>
+        <h2>From estimate to exact price</h2>
+        <p>An estimate is a great starting point, but the right care plan depends on details a calculator can't see — mobility, medications, cognition, home layout, and family schedules. That's what the free RN assessment is for.</p>
+        <p>A registered nurse reviews needs in person or by video, recommends a care level, and confirms your exact rate. If long-term care insurance or VA benefits apply, we verify coverage so your real out-of-pocket cost may be lower than the estimate shown here.</p>
+      </div>
+      <aside class="sidebar-card">
+        <h3>Lower your cost</h3>
+        <p>Benefits can cover a large share of care.</p>
+        <a href="ltc-insurance.html" class="btn btn-outline-blue" style="margin-bottom: 12px;">Use LTC Insurance</a>
+        <a href="va-benefits.html" class="btn btn-outline-blue">Check VA Benefits</a>
+        <a href="../decide/assessment.html" class="btn btn-orange" style="margin-top:8px;">Free Care Assessment</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section>
+    <div class="container">
+      <div class="eyebrow" style="text-align:center;">Common questions</div>
+      <h2 style="text-align:center;">Calculator FAQs</h2>
+      <div class="faq-list" style="margin-top:32px;">
+        <details>
+          <summary>Is the calculator estimate a real quote?</summary>
+          <div class="answer">No. The calculator gives a planning estimate based on hours, days, and care level using standard rates. Your exact price depends on specific care needs and schedule, and is confirmed during a free RN assessment. Benefits like LTC insurance or VA Aid and Attendance may lower your actual out-of-pocket cost.</div>
+        </details>
+        <details>
+          <summary>Do I have to enter my contact information?</summary>
+          <div class="answer">No. The calculator runs entirely in your browser and requires no name, email, or phone number. You can explore as many scenarios as you like privately. When you're ready to talk to a nurse, you choose to reach out — there's no obligation and the assessment itself is always free.</div>
+        </details>
+        <details>
+          <summary>How is the monthly cost calculated?</summary>
+          <div class="answer">The calculator multiplies your hourly rate by hours per day and days per week to produce a weekly total, then multiplies that by 4.33 — the average number of weeks in a month. This gives a realistic monthly projection rather than a simple four-week figure, which would understate most months.</div>
+        </details>
+        <details>
+          <summary>Why do different care levels cost different amounts?</summary>
+          <div class="answer">Higher care levels require more training and skill. Companion care covers company, errands, and light help; personal care adds bathing, dressing, and mobility support; specialized care covers dementia and complex needs. Each level carries a different hourly rate, which is why selecting a level changes your estimate.</div>
+        </details>
+        <details>
+          <summary>Can benefits reduce the cost shown here?</summary>
+          <div class="answer">Yes. The estimate reflects private-pay rates before any benefits. Long-term care insurance often reimburses non-medical home care, and eligible veterans may receive VA Aid and Attendance. We verify coverage and handle paperwork, so your real cost can be meaningfully lower than the calculator's figure.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Like your estimate? Confirm it free.</h2>
+      <p>Book a no-cost RN assessment to lock in your exact care plan and price.</p>
+      <div class="cta-row">
+        <a href="../decide/assessment.html" class="btn btn-outline-white btn-lg">Free Care Assessment</a>
+        <a href="tel:+18585550123" class="btn btn-outline-white">📞 (858) 555-0123</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-credentials">
+        <div class="cred">CDSS Licensed<small>State of California</small></div>
+        <div class="cred">HCO #194700XXXX<small>Home Care Organization</small></div>
+        <div class="cred">RCFE Compliant<small>Placement Services</small></div>
+        <div class="cred">BBB A+<small>Accredited Business</small></div>
+        <div class="cred">HCAOA Member<small>Industry Standards</small></div>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col orange">
+          <h4>Get Care Now</h4>
+          <ul>
+            <li><a href="../care-now/hospital-discharge.html">Hospital Discharge</a></li>
+            <li><a href="../care-now/sudden-decline.html">Sudden Decline</a></li>
+            <li><a href="../care-now/after-a-fall.html">After a Fall</a></li>
+            <li><a href="../care-now/dementia-memory.html">Dementia Care</a></li>
+            <li><a href="../care-now/caregiver-burnout.html">Caregiver Respite</a></li>
+            <li><a href="../care-now/crisis-urgent.html">Crisis Response</a></li>
+          </ul>
+        </div>
+        <div class="footer-col blue">
+          <h4>Pricing &amp; Payment</h4>
+          <ul>
+            <li><a href="../pricing/">Our Rates</a></li>
+            <li><a href="../pricing/calculator.html">Cost Calculator</a></li>
+            <li><a href="../pricing/cost-index.html">2026 Cost Index</a></li>
+            <li><a href="../pricing/how-were-paid.html">How We're Paid</a></li>
+            <li><a href="../pricing/ltc-insurance.html">LTC Insurance</a></li>
+            <li><a href="../pricing/va-benefits.html">VA Benefits</a></li>
+          </ul>
+        </div>
+        <div class="footer-col orange">
+          <h4>Help Me Decide</h4>
+          <ul>
+            <li><a href="../decide/assessment.html">Care Level Assessment</a></li>
+            <li><a href="../decide/home-vs-assisted.html">Home Care vs. Assisted Living</a></li>
+            <li><a href="../decide/when-is-it-time.html">When Is It Time?</a></li>
+            <li><a href="../decide/placement.html">Placement Services</a></li>
+            <li><a href="../decide/rn-consultation.html">Free RN Consultation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col blue">
+          <h4>Why Trust Us</h4>
+          <ul>
+            <li><a href="../trust/team.html">Our RN-Led Team</a></li>
+            <li><a href="../trust/accreditations.html">Accreditations</a></li>
+            <li><a href="../trust/outcomes.html">Outcomes &amp; Reviews</a></li>
+            <li><a href="../trust/stories.html">Family Stories</a></li>
+            <li><a href="../trust/hospital-partners.html">Hospital Partners</a></li>
+            <li><a href="../trust/careers.html">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-grid" style="margin-bottom:0;">
+        <div class="footer-col">
+          <h4>Service Areas</h4>
+          <ul>
+            <li><a href="../areas/san-diego.html">San Diego</a></li>
+            <li><a href="../areas/la-jolla.html">La Jolla</a></li>
+            <li><a href="../areas/chula-vista.html">Chula Vista</a></li>
+            <li><a href="../areas/escondido.html">Escondido</a></li>
+            <li><a href="../areas/carlsbad.html">Carlsbad</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>&nbsp;</h4>
+          <ul>
+            <li><a href="../areas/el-cajon.html">El Cajon</a></li>
+            <li><a href="../areas/oceanside.html">Oceanside</a></li>
+            <li><a href="../areas/poway.html">Poway</a></li>
+            <li><a href="../areas/encinitas.html">Encinitas</a></li>
+            <li><a href="../areas/rancho-bernardo.html">Rancho Bernardo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>📞 <a href="tel:+18585550123">(858) 555-0123</a></li>
+            <li>✉️ <a href="mailto:hello@carevider.com">hello@carevider.com</a></li>
+            <li>📍 San Diego, CA</li>
+            <li>🕐 24/7 Intake Line</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/es/">Español</a></li>
+            <li><a href="/professional/">For Professionals</a></li>
+            <li><a href="/blog/">Blog &amp; Guides</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Carevider, an Evergreen Senior Care company. All rights reserved.</div>
+        <div>HCO #194700XXXX • CDSS Licensed • RCFE Compliant</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA BAR -->
+  <div class="mobile-sticky" aria-label="Quick actions">
+    <div class="row">
+      <a href="tel:+18585550123" class="btn btn-blue">📞 Call</a>
+      <a href="../decide/assessment.html" class="btn btn-orange">Free Assessment</a>
+    </div>
+  </div>
+
+  <script src="../scripts/nav.js" defer></script>
+  <script src="../scripts/calculator.js" defer></script>
+</body>
+</html>
